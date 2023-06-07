@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sosanh</title>
+</head>
+<body>
+<script>
+    var mang = Array(10);
+    var max = 0;
+    var tb = 0;
+    for (let i = 0; i < mang.length; i++) {
+        mang[i] = parseInt(prompt('nhập phần tử thứ ' + (i + 1)));
+    }
+    for (let i = 0; i < mang.length; i++) {
+        if (mang[i] > max) {
+            max = mang[i];
+        }
+        tb += mang[i];
+    }
+    tb = tb/10;
+
+    document.writeln("so lon nhat la: " + max +"<br>");
+
+    document.writeln("trung bình là " + tb);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trungbinhxeploai</title>
+</head>
+<body>
+<script>
+    let kt = parseFloat(prompt("nhap diem kiểm tra"));
+    let gk = parseFloat(prompt("nhap diem giữa kì"));
+    let ck = parseFloat(prompt("nhap diem cuối kì"));
+    let tb= ((kt+(gk*2)+(ck*3))/6);
+    if (tb >= 8,5){
+        document.write('Học lực giỏi : Với số điểm là ' + tb);
+    }else if (tb >=7){
+        document.write('Học lực khá : Với số điểm là ' + tb);
+    }else if (tb >=5){
+        document.write('Học lực trung bình : Với số điểm là ' + tb);
+    }else if (tb >=3){
+        document.write('Học lực yếu : Với số điểm là ' + tb);
+    }else
+        document.write('mua bò về giữ đi chứ học hành gì nữa');
+
+</script>
+</body>
+</html>

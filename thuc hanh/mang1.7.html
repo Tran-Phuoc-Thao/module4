@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [2,12,11,15,32,54,23,56,21];
+    let V = +prompt("Enter V");
+    function search(A,x) {
+        for(let i=0;i<A.length;i++){
+            if(x==A[i]){
+                return i;
+            }
+        }
+        return -1;
+    }
+    document.write("arr = "+arr+"<br>")
+    let index = search(arr,V);
+    if(search(arr,V)!=-1){
+        for(let i=index;i<arr.length-1;i++){
+            arr[i] =arr[i+1];
+
+
+
+        }
+        arr.pop();
+    }
+
+
+
+    document.write("arr = "+ arr);
+</script>
+</body>

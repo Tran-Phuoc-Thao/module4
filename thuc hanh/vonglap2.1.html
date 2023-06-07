@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vonglap2.1</title>
+</head>
+<body>
+<script>
+    var a = parseInt(prompt('muốn in ra bao nhiêu số'));
+    var b = 0;
+    var c = 1;
+    var fibonacci;
+    for (i = 1; i <= a; i++) {
+        fibonacci = b + c;
+        c = b;
+        b = fibonacci;
+        document.write(' ' + fibonacci);
+
+    }
+
+    // function f(a) {
+    //     if (a == 0) return 1;
+    //     if (a == 1) return 1;
+    //     else return f(a - 1) + f(a - 2);
+    // }
+    // let t = parseInt(prompt('muốn in ra bao nhiêu số'));
+    // for (i = 0; i < t ; i++) {
+    //     document.write(' ' + f(i));
+    // }
+</script>
+</body>
+</html>

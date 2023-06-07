@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8</title>
+</head>
+<body style="background-image: url('https://upanh123.com/wp-content/uploads/2021/01/hinh-nen-luffy3-2048x1152.jpg')">
+<h1 style="color: blue;text-align: center">Hãy Thử Đoán Xem</h1>
+<hr>
+<button onclick="play()"
+        style="width: 70px;height: 50px;font-size: 20px;color: red;background-color: #ffbf00;margin-left: 600px">Chơi
+</button>
+<script>
+    function play() {
+        let a = parseInt(prompt('bạn muốn đoán số trong khoảng từ '));
+        let b = parseInt(prompt('đến số '));
+        let c = Math.floor(Math.random() * (b - a)) + a;
+        let d = parseInt(prompt('số bạn muốn đoán trong khoảng vừa chọn là số : '));
+        while (1) {
+            if (c > d) {
+                d = parseInt(prompt('số bạn vừa nhập nhỏ hơn '));
+                continue;
+            }
+            if (c < d) {
+                d = parseInt(prompt('số bạn vừa nhập lớn hơn '));
+                continue;
+            }
+            if (c = d) {
+                alert('xin chúc mừng bạn đã đoán trúng và chiến thắng');
+                break;
+            }
+                }
+
+    }
+</script>
+</body>
+</html>

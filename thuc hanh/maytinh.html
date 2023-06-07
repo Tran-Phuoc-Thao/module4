@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>maytinh</title>
+</head>
+<body>
+<h2 style="margin-left: 120px;color: purple"> Máy Tính</h2>
+<input type="text" id="from">
+<input type="text" id="to"><br>
+<div id="2">
+<button style="margin-top: 10px" onclick="tinh('+')" >addition(+)</button>
+<button style="margin-top: 10px" onclick="tinh('-')" >subtraction(-)</button>
+<button style="margin-top: 10px" onclick="tinh('x')" >multiplication(x)</button>
+<button style="margin-top: 10px" onclick="tinh('/')" >division(/)</button>
+</div>
+    <p id="1" style="color: blue"></p>
+<script>
+    function tinh(value) {
+        let a = parseFloat(document.getElementById('from').value);
+        let b = parseFloat(document.getElementById('to').value);
+        let c = parseFloat(document.getElementById('2').value);
+        let d;
+        switch (value) {
+            case "+" : d=a+b;break;
+            case "-" : d=a-b;break;
+            case "x" : d=a*b;break;
+            case "/" : d=a/b;break;
+
+        }
+        document.getElementById('1').innerText = d;
+
+
+
+
+    }
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 4</title>
+</head>
+<body>
+<script>
+    let chuoi = prompt('nhập chuỗi');
+    let dem = 0;
+    for (let i = 0; i < chuoi.length; i++) {
+        if (chuoi[i] == ' ' && chuoi[i + 1] != ' ') dem++;
+
+    }
+    alert('chuỗi vừa nhập có ' + dem + ' từ ');
+</script>
+</body>
+</html>

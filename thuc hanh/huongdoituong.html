@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="300" height="200" style="border: 1px solid red"></canvas>
+<script>
+    let hinhchuhat=  function(x,y) {
+
+        this.x=x;
+
+        this.y=y;
+
+        this.getChieuDai= function () {
+            return x;
+        }
+        this.getChieuRog=function () {
+            return y;
+        }
+        this.getCV=function () {
+            return (x+y)*2;
+        }
+        this.getDT=function () {
+            return x*y;
+        }
+        this.setChieuDai=function (x) {
+            this.x=x;
+        }
+        this.setChieuRong=function (y) {
+            this.y=y;
+        }
+    };
+    function getRanDomHex() {
+        return  Math.floor(Math.random()*255)
+    }
+    function getRanDomColor() {
+        let red= getRanDomHex();
+        let green=getRanDomHex();
+        let blue=getRanDomHex();
+        return "rgb(" + red + "," + blue + "," + green +")";
+    }
+    function  veHCN()
+    {
+        let ctx=document.getElementById("canvas").getContext("2d");
+        let color=getRanDomColor();
+        let hcn= new hinhchuhat(200,100);
+        ctx.beginPath();
+        ctx.fillRect(50,50,hcn.x,hcn.y);
+        ctx.fillStyle=color;
+        ctx.fill();
+    }
+    function inCVDT()
+    {
+        let hcn= new hinhchuhat(200,100);
+        let cv = hcn.getCV();
+        let dt = hcn.getDT();
+        document.writeln("chu vi la: "+ cv.toString());
+        document.write("<br>");
+        document.writeln("dien tich la: "+ dt.toString());
+    }
+    veHCN();
+    document.write("<br>");
+    inCVDT()
+</script>
+</body>
+</html>

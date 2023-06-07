@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let A = [];
+    let B = [];
+    for (let i = 0; i < 10; i++) {
+        A[i] = Math.floor(Math.random() * 100);
+        B[i] = Math.floor(Math.random() * 100);
+    }
+    document.write("Arr1 = " + A + "<br>");
+    document.write("Arr2 = " + B + "<br>");
+    let c = A.concat(B);
+    document.write("Arr3 = " + c + "<br>")
+</script>
+</body>
+</html>

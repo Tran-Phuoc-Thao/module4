@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiemtra(a) {
+        for ( let i = 2; i <= Math.sqrt(a); i++) {
+            if (a % i == 0) {
+                return false;
+                break;
+            }
+
+        }
+        return true;
+
+
+    }
+
+    let number = parseInt(prompt('muốn hiển thị bao nhiêu số nguyên tố : '));
+    let dem = 0;
+    let n = 2;
+    // while (dem < number) {
+    //     if (kiemtra(n) == true) {
+    //         document.write(n + " ");
+    //         dem++;
+    //     }
+    //     n++
+    // }
+
+    for ( let i = 2; dem < number; i++) {
+        if (kiemtra(i) == true) {
+            document.write(i + " ");
+            dem++;
+        }
+    }
+
+</script>
+</body>
+</html>

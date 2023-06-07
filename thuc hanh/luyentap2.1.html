@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <p>Nhập vào độ C muốn chuyển sang độ F</p>
+    <input type="text" id="do">
+    <br>
+    <br>
+    <button onclick="convert1()">Đổi lại</button>
+    <p id="kich"></p>
+</table>
+<form style="width:100px">
+    <script>
+        function convert1()
+        {
+            let doc = document.getElementById('do').value;
+            let dof = doc *  9/5 + 32
+            document.getElementById('kich').innerHTML = dof
+
+        }
+    </script>
+</form>
+</body>
+</html>

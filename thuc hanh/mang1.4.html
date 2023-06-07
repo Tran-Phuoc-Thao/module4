@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let nSize;
+    nSize = +prompt("Enter Size");
+    for(let i=0;i<nSize;i++){
+        arr[i] = Math.floor(Math.random()*100);
+    }
+    let count = nSize-1;
+    document.write("arr ="+arr+"<br>");
+    for(let i=0;i<nSize;i++){
+        if(i<count){
+            let c =arr[i];
+            arr[i] = arr[count];
+            arr[count] = c;
+        }
+        count--;
+    }
+    document.write("mảng sau khi bị đảo ngược  ="+arr);
+
+</script>
+</body>
+</html>

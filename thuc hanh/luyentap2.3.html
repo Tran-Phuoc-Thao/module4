@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Nhập cạnh </p>
+<input type="text" id="canh">
+<br><br>
+<button onclick="convert()">Tính diên tích</button>
+<p id="tinhs"></p>
+<script>
+    function convert() {
+        let a = document.getElementById('canh').value;
+        let s = a * a;
+        document.getElementById('tinhs').innerHTML = s;
+    }
+</script>
+</body>
+</html>

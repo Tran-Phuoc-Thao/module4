@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Nhập chiều dài </p>
+<input type="text" id="canha">
+<p>Nhập chiều rộng </p>
+<input type="text" id="canhb">
+<br><br>
+<button onclick="convert()">Tính diên tích</button>
+<p id="tinhs"></p>
+<script>
+    function convert() {
+        let a = document.getElementById('canha').value;
+        let b = document.getElementById('canhb').value;
+        let s = a * b / 2;
+        document.getElementById('tinhs').innerHTML = s;
+    }
+</script>
+</body>
+</html>

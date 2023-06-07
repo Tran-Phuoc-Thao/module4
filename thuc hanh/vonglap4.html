@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vonglap4</title>
+</head>
+<body>
+<script>
+    alert('số đầu tiên trong dãy fibonacci chia hết cho 5 là ');
+    var a = 20;
+    var b = 0;
+    var c = 1;
+    var fibonacci = b + c;
+    for (i = 1; i <= a; i++) {
+        b = c;
+        c = fibonacci;
+        fibonacci = b + c;
+        if (fibonacci % 5 == 0){
+            document.write(fibonacci);
+            break;}
+
+
+    }
+</script>
+</body>
+</html>

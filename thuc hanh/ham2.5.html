@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function min3s(a, b, c) {
+        let min = a;
+        if (b < min)
+            if (b < c)
+                return b;
+            else
+                return c;
+        else if (c < min)
+            if (b < c)
+                return b;
+            else
+                return c;
+        else
+            return a;
+    }
+
+    let a = parseInt(prompt('nhập số nguyên thứ 1'));
+    let b = parseInt(prompt('nhập số nguyên thứ 2'));
+    let c = parseInt(prompt('nhập số nguyên thứ 3'));
+    let d = min3s(a, b, c);
+    alert('số bé nhất là ' + d );
+</script>
+</body>
+</html>

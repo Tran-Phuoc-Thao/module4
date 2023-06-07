@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiemtratuoi</title>
+</head>
+<body>
+<p>Nhập tuổi</p>
+<input type="text" id="tuoitre">
+<br><br>
+<p></p>
+<button onclick="convert1()">xem thử đủ tuổi không ?</button>
+<script>
+    function convert1() {
+        let tuoi = parseInt(document.getElementById('tuoitre').value);
+
+
+        if (tuoi >= 16) {
+            document.write("Dủ điều kiện vào lớp 10");
+        } else if (tuoi < 16)
+            document.write("Không đủ điều kiện");
+    }
+</script>
+</body>
+</html>

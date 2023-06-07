@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <p>Nhập vào một số</p>
+    <input type="text" id="so">
+    <br><br>
+</table>
+<button onclick="convert()">Thử xem có phải tuổi của một người không</button>
+<p id="nhan"></p>
+<script>
+    function convert() {
+        let tuoi = document.getElementById('so').value;
+        if (tuoi > 0 && tuoi <=120 ) {
+            document.getElementById('nhan').innerHTML = 'Là tuổi của một người';
+        }else
+            document.getElementById('nhan').innerHTML = 'Không phải tuổi của một người';
+    }
+</script>
+</body>
+</html>

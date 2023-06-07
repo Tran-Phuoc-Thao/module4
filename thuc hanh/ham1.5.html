@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="TIM KIEM SAO" onclick="nhants()">
+<script>
+    function nhants()
+    {
+        let ngoisao= [ "Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe" , "Regulus"];
+        let chomsao =["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        let tg;
+        let xuat ;
+        let nhap = prompt("nhap ngoi sao");
+        for (let i = 0; i < ngoisao.length; i++)
+        {
+            if (nhap == ngoisao[i])
+            {
+                tg = i;
+                for (let j = 0; j < chomsao.length; j++)
+                {
+                    if (tg==j)
+                        xuat = chomsao[j];
+                }
+            }
+        }
+        alert(xuat.toString())
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <p>Nhập vào số mét cần chuyển đổi</p>
+    <input type="text" id="cd">
+    <br>
+    <p>Đổi từ Mét sang Feet</p>
+    <button onclick="convert()">Chuyển đổi</button>
+    <p id="chuyen"></p>
+</table>
+<form style="width:100px">
+    <script>
+        function convert() {
+            let met = document.getElementById('cd').value;
+            let ft = met * 3.2808;
+            document.getElementById('chuyen').innerHTML = ft;
+        }
+    </script>
+</form>
+</body>
+</html>

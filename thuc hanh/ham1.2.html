@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhap vao mot so</label>
+<input type="text" id="Value">
+<input type="button" onclick="tang1dv() " value=" tang 1 dv">
+<input type="button" value="resert" onclick="resert()">
+<div id="kq"></div>
+<script>
+    function tang1dv() {
+        let a = parseInt(document.getElementById("Value").value);
+        a += 1;
+        document.getElementById("kq").innerHTML = a;
+    }
+
+    function resert() {
+        document.getElementById("Value").value = "";
+        document.getElementById("kq").innerHTML = "";
+    }
+</script>
+</body>
+</html>

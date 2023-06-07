@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập từ</label>
+<input type="text" id="txtValue">
+<input type="button" value="Dich" id="btndich" onclick="dich()">
+<div id="result"></div>
+<script>
+    function dich() {
+        let m1 = ["phước thảo", "pencil", "chicken","table", "cat", "dog", "pig", "ghost", "Devil"];
+        let m2 = ["đẹptrai", "bút chì", " con gà","bảng", "con mèo", "con chó", "con heo", "con ma", "con quỷ"];
+        let value = document.getElementById("txtValue").value;
+        for (let i = 1; i < m1.length; i++) {
+            if (value == m1[i]) {
+                for (let j = 1; j < m2.length; j++) {
+                    if (i == j) {
+                        value = m2[j];
+                    }
+                }
+            }
+        }
+        document.getElementById("result").innerHTML = value;
+    }
+</script>
+
+
+</body>
+</html>

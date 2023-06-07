@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    for (let i = 1; i < 17; i++) {
+        for (let j = 1; j <= 26; j++) {
+            if (j <= 2 && i <= 2 || i == 1 && j == 3
+                || i <= 2 && j >= 11 && j <= 15 || j >= 24 && i <= 2
+                || i == 2 && j == 24 || i == 1 && j == 23
+                || i == 1 && j == 10 || i == 1 && j == 16 || i >= 11 && j <= 2
+                || i == 13 && j == 3 || i == 13 && j == 4 || i == 10 && j == 1
+                || i == 14 && j <= 7 || i == 15 && j <= 9 || i==16 && j <= 11
+            || i== 10 && j >=25 || i==11 && j >=24 || i==12 && j >=23 || i==13 && j >=21
+            || i==14 && j >=20 || i==15 && j >=18 || i==16 && j >=17 || i ==12 && j==3) {
+                document.write("&nbsp;&nbsp;");
+            } else
+                document.write("*");
+
+        }
+        document.write("<br>");
+    }
+</script>
+
+</body>
+</html>

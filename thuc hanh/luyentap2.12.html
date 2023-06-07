@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <p>Nhập vào số tiền đã vay</p>
+    <input type="text" id="vay">
+
+    <p>Số tháng vay</p>
+    <select id="thang">
+        <option id="1" value="1">1</option>
+        <option id="2" value="2">2</option>
+        <option id="3" value="3">3</option>
+        <option id="4" value="4">4</option>
+        <option id="5" value="5">5</option>
+        <option id="6" value="6">6</option>
+        <option id="7" value="7">7</option>
+        <option id="8" value="8">8</option>
+        <option id="9" value="9">9</option>
+        <option id="10" value="10">10</option>
+        <option id="11" value="11">11</option>
+        <option id="12" value="12">12</option>
+    </select>
+    <br>
+    <br>
+    <button onclick="convert()">Tính Lãi</button>
+    <p id="kichchuot"></p>
+</table>
+<br>
+<script>
+    function convert() {
+        let tien = parseInt(document.getElementById('vay').value);
+        let lai = tien / 100 * 5 ;
+        let thangvay = parseInt(document.getElementById('thang').value);
+        if (thangvay ===  1) {
+            document.getElementById("kichchuot").innerHTML = lai;
+        }else if (thangvay ===  2) {
+            document.getElementById("kichchuot").innerHTML = lai * 2;
+        }else if (thangvay ===  3) {
+            document.getElementById("kichchuot").innerHTML = lai * 3;
+        }else if (thangvay ===  4) {
+            document.getElementById("kichchuot").innerHTML = lai * 4;
+        }else if (thangvay ===  5) {
+            document.getElementById("kichchuot").innerHTML = lai * 5;
+        }else if (thangvay ===  6) {
+            document.getElementById("kichchuot").innerHTML = lai * 6;
+        }else if (thangvay === 7) {
+            document.getElementById("kichchuot").innerHTML = lai * 7;
+        }else if (thangvay === 8) {
+            document.getElementById("kichchuot").innerHTML = lai * 8;
+        }else if (thangvay === 9) {
+            document.getElementById("kichchuot").innerHTML = lai * 9;
+        }else if (thangvay === 10) {
+            document.getElementById("kichchuot").innerHTML = lai * 10;
+        }else if (thangvay === 11) {
+            document.getElementById("kichchuot").innerHTML = lai * 11;
+        }else if (thangvay === 12) {
+            document.getElementById("kichchuot").innerHTML = lai * 12;
+        }
+    }
+</script>
+
+</body>
+</html>

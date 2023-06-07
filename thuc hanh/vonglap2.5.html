@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lãi</title>
+</head>
+<body>
+<script>
+    let a = parseFloat(prompt('nhập số tiền muốn vay'));
+    let b = parseInt(prompt('vay trong bao nhiêu năm'));
+    for (i = 1; i <= b; i++) {
+        a = a + a * 0.08;
+    }
+    document.write('vậy số tiền phải trả sau ' + b + ' năm là ' + a);
+</script>
+</body>
+</html>

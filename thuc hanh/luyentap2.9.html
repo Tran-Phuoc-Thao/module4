@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color: pink">
+
+<p>Nhập số thứ nhất</p>
+<input type="text" id="one">
+<p>Nhập số thứ hai</p>
+<input type="text" id="two">
+<p>Nhập số thứ ba</p>
+<input type="text" id="three">
+<br><br>
+<button onclick="convert()">Tính</button>
+<p id="qwe"></p>
+<script>
+    function convert() {
+        let a = document.getElementById('one').value;
+        let b = document.getElementById('two').value;
+        let c = document.getElementById('three').value;
+        if (a > 0 && b > 0 && c > 0) {
+            if (a + b > c && b + c > a && a + c > b)
+                document.getElementById('qwe').innerText = 'a,b,c là 3 cạnh của tam giác';
+            else document.getElementById('qwe').innerText = 'a,b,c không là 3 cạnh của tam giác';
+        } else document.getElementById('qwe').innerText = 'a,b,c không là 3 cạnh của tam giác';
+    }
+</script>
+</body>
+</html>

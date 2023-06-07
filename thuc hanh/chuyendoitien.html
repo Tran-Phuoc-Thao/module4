@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyendoitien</title>
+</head>
+<body>
+<table>
+    <tr style="text-align: center">
+        <td><h2 style="width: 200px">Amount</h2></td>
+        <td></td>
+        <td><h2 style="width: 200px">From Curenry</h2></td>
+        <td></td>
+        <td><h2 style="width: 200px">To Curenry</h2></td>
+    </tr>
+    <tr style="text-align:center ">
+        <td><input type="text" id="nhaptien"></td>
+        <td></td>
+        <td> <select id="from">
+            <option value="VNĐ">VNĐ</option>
+            <option value="USD">USD</option>
+        </select></td>
+        <td></td>
+        <td>
+            <select id="to">
+                <option value="USD">USD</option>
+                <option value="VNĐ">VNĐ</option>
+            </select>
+        </td>
+        <td></td>
+        <td><button onclick="convert()" style="color: red">confirm</button>
+    </tr>
+    <tr>
+        <td><p id="chuyendoitien" style="color: blue "></p></td>
+    </tr>
+
+</table>
+    <script>
+        function convert()
+        {
+            let tien = parseFloat(document.getElementById('nhaptien').value;
+            let chuyendoitien=document.getElementById('from').value;
+            let chuyendoitien2=document.getElementById('to').value;
+            let giatri = 0;
+            if (chuyendoitien=="VNĐ" && chuyendoitien2=="USD") giatri = tien/23000
+            else {if (chuyendoitien=="USD" && chuyendoitien2=="VNĐ") giatri = tien*23000;
+            else confirm('Nhập sai định dạng nhập lại đi');}
+            document.getElementById("chuyendoitien").innerText  = `${tien}${chuyendoitien} = ${giatri}${chuyendoitien2}`;
+
+        }
+    </script>
+
+</body>
+</html>

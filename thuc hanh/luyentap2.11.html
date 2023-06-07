@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Nhập vào số tiền lương của bạn</p>
+<input type="text" id="luong">
+<button onclick="convert()">Thuế thu nhập cá nhân</button>
+<p id="thue"></p>
+<script>
+    function convert() {
+        let luong = document.getElementById('luong').value;
+        let thue0 = luong / 100 * 1
+        let thue1 = luong / 100 * 2
+        let thue2 = luong / 100 * 3
+        let thue3 = luong / 100 * 4
+        let thue4 = luong / 100 * 5
+        let thue5 = luong / 100 * 6
+        if (luong < 20000000){
+            document.getElementById('thue').innerHTML = thue0 +' '+' '+ 'Lương như thế này sao có người yêu'
+        }else if (luong >=1000000000){
+            document.getElementById('thue').innerHTML = 'ăn cướp hay sao mà tiền nhiều thế'
+        }else if (luong >=1000000000){
+        }else if (luong >= 100000000){
+            document.getElementById('thue').innerHTML = thue5
+        }else if (luong >= 80000000){
+            document.getElementById('thue').innerHTML = thue4
+        }else if (luong >= 60000000){
+            document.getElementById('thue').innerHTML = thue3
+        }else if (luong >= 400000000){
+            document.getElementById('thue').innerHTML = thue2
+        }else if (luong >= 200000000){
+            document.getElementById('thue').innerHTML = thue1
+        }
+
+
+
+    }
+</script>
+</body>
+</html>

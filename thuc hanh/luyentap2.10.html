@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Nhập số điện</p>
+<input type="text" id="dien">
+<br><br>
+<button onclick="convert()">Tính tiền điện</button>
+<p id="asd"></p>
+<script>
+    function convert() {
+        let a = document.getElementById('dien').value;
+        let b = 2014;
+        let tiendien = a * b
+        document.getElementById('asd').innerHTML= tiendien + "      " + "   VNĐ  "
+    }
+
+</script>
+</body>
+</html>

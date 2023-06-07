@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p> Phương trình bậc 1 có dạng : ax^2+bx+c=0</p>
+<p>Nhập a </p>
+<input type="text" id="nhapa">
+<p>Nhập b </p>
+<input type="text" id="nhapb">
+<p>Nhập c </p>
+<input type="text" id="nhapc">
+<br><br>
+<button onclick="convert()">Tính phương trình bậc 2</button>
+<p id="tinhs"></p>
+<script>
+    function convert() {
+        let a = document.getElementById('nhapa').value;
+        let b = document.getElementById('nhapb').value;
+        let c = document.getElementById('nhapc').value;
+        let d = b * b - 4 * a * c
+        let l = Math.sqrt(d)
+        if (d == 0) {
+            document.getElementById('tinhs').innerHTML = -b / (2 * a)
+        }else if(d > 0) {
+            document.getElementById('tinhs').innerHTML = (-b + l) / (2*a) + " và " + (-b - l / (2*a))
+        } else if ( d < 0) {
+            document.getElementById('tinhs').innerHTML = 'phương trình vô nghiệm'
+        }
+
+    }
+
+</script>
+</body>
+</html>
+</body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function check_mang() {
+        let so= prompt("mang gom bao nhieu so: ");
+        let a=[];
+        let d=0;
+        for(let i=0; i<so;i++)
+        {
+            a[i]=+prompt("nhap gia tri thu "+ i + " :");
+        }
+        let nhap= prompt("nhap vao ki  tu bat ki:");
+        for(let i=0; i<a.length;i++)
+        {
+            if(nhap==a[i])
+            {
+                d++;
+            }
+        }
+        if(d>0)
+            return d;
+        else
+            return -1;
+    }
+    document.write(check_mang().toString())
+</script>
+</body>
+</html>

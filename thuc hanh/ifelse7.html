@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Nhập vào số cước điện thoại tháng này</p>
+<input type="text" id="nhaptien">
+<button onclick="convert()">Tính tiền</button>
+<p id="tinh"></p>
+<form style="width:100px">
+    <script>
+        function convert() {
+            let tien = parseInt(document.getElementById('nhaptien').value);
+
+
+            if (tien <= 100) {
+                document.getElementById("tinh").innerHTML = tien * 10000;
+            }else if (tien > 100){
+                document.getElementById("tinh").innerHTML = tien * 10000;
+            }
+        }
+    </script>
+
+</form>
+</body>
+</html>

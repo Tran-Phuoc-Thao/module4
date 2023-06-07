@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function daomang() {
+        let so = prompt("mang gom bao nhieu so: ");
+        let a = [];
+        for (let i = 0; i < so; i++) {
+            a[i] = prompt("nhap gia tri thu " + (i+1) + " :");
+        }
+        document.write(a.toString());
+        document.write("<br>");
+        let b = a.reverse();
+        document.write(b.toString());
+    }
+
+    daomang()
+</script>
+</body>
+</html>

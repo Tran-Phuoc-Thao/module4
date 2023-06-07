@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vonglap5</title>
+</head>
+<body>
+<script>
+    alert('20 số fibonacci đầu tiên là');
+    let a = 20;
+    let b = 0;
+    let c = 1;
+    let tong = 0;
+    let fibonacci;
+    for (i = 1; i <= a; i++) {
+        fibonacci = b + c;
+        tong += fibonacci;
+        c = b;
+        b = fibonacci;
+    }
+    document.write(tong);
+</script>
+</body>
+</html>
