@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/Upload}">Thêm mới bài hát</a>
+<h3>Danh sách bài hát</h3>
+<table>
+    <tr>
+
+        <th>Tên bài hát</th>
+        <th>Ca sĩ</th>
+        <th>Thể loại</th>
+        <th>Play</th>
+    </tr>
+    <tr>
+        <td th:text="${result.getTen()}"></td>
+        <td th:text="${result.getNgheSi()}"></td>
+        <td th:text="${result.getTheLoai()}"></td>
+        <td th:text="${result.getMultipartFile().getOriginalFilename()}"></td>
+    </tr>
+</table>
+</body>
+</html>

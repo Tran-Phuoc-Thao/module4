@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:object="${song}" th:action="@{/Upload}" th:method="post"
+      enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>Name of song</td>
+            <td>
+                <input type="number" th:field="*{ten}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Singer</td>
+            <td>
+                <input type="text" th:field="*{ngheSi}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Music type</td>
+            <td>
+                <select th:field="*{theLoai}" >
+                    <option th:each = "theLoai : ${typeList}" th:value="${theLoai}" th:text="${theLoai}" ></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>
+                <input type="file" th:field="*{multipartFile}"/>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Save"/>
+            </td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>

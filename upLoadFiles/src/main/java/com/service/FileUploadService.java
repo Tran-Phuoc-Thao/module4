@@ -11,6 +11,9 @@ import java.io.IOException;
 public class FileUploadService {
 
     public void uploadFile(MultipartFile file) throws IOException {
-        file.transferTo(new File("C:\\Users\\thanh\\OneDrive\\Tài liệu"+file.getOriginalFilename()));
+        file.transferTo(new File("D:\\codegym\\module4\\module4\\upLoadFiles\\src\\main\\resources\\upload\\"+file.getOriginalFilename()));
     }
+
+
+
 }
