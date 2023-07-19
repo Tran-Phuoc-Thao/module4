@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+<header style="background: paleturquoise;height: 100px">
+    <img  style="height:100px;background:paleturquoise" src="https://tse2.mm.bing.net/th?id=OIP.X-BqeuY-fo0fSF8uuqT85AHaEP&pid=Api&P=0&h=180">
+</header>
+<nav style="background: darkgray;height: 42px">
+<button th:href="@{/Blog/create}" style="height: 39px;font-size: 20px;margin-top: 1px;color: cornflowerblue;background: beige">Create Bloger</button>
+</nav>
+<article style="height: 400px;background: antiquewhite;width: 500px">
+<table>
+    <tr th:each="Blog,status: ${BlogList}">
+        <td>
+            <img th:src="${Blog.image}">
+        </td>
+        <td th:text="${Blog.name}">
+
+        </td>
+    </tr>
+
+</table>
+
+
+
+
+</article>
+<footer style="background: black;height: 59px">
+
+</footer>
+</body>
+</html>

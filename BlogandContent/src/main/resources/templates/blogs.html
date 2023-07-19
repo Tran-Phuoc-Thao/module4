@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image: url('http://thuthuatphanmem.vn/uploads/2018/08/21/hinh-nen-powerpoint-don-gian-dep-31_045407361.jpg');">
+
+<button onclick="window.location.href='/blog'" style="height: 39px;font-size: 20px;margin-top: 1px;color: cornflowerblue;background: beige">Create User</button>
+<form method="post" th:object="${contentt}" th:action="@{/user/createContent}">
+<table style="border-style: solid" >
+        <tr>
+            <td>ghiChu</td>
+            <td><input type="text" th:field="*{ghiChu}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit"></td>
+        </tr>
+</table>
+</form>
+
+
+</body>
+</html>

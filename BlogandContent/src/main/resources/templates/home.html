@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+<header style="background: paleturquoise;height: 100px">
+    <img  style="height:100px;background:paleturquoise" src="https://tse2.mm.bing.net/th?id=OIP.X-BqeuY-fo0fSF8uuqT85AHaEP&pid=Api&P=0&h=180">
+</header>
+<nav style="background: darkgray;height: 42px">
+    <button onclick="window.location.href='/user/createUser'" style="height: 39px;font-size: 20px;margin-top: 1px;color: cornflowerblue;background: beige;">Create User</button>
+    <button onclick="window.location.href='/user/createBlog'" style="height: 39px;font-size: 20px;margin-top: 1px;color: cornflowerblue;background: beige">Create Blog</button>
+    <button onclick="window.location.href='/user/createContent'" style="height: 39px;font-size: 20px;margin-top: 1px;color: cornflowerblue;background: beige">Create Content</button>
+</nav>
+<section style="height: 400px;width: 1280px" >
+<article style="height: 400px;background: antiquewhite;width: 450px;float: left">
+
+    <table border="1" th:if="${blogList!=null}" style="margin: auto;border-style: solid" th:each="blog : ${blogList}">
+        <tr>
+            <td th:text="${blog.id}" ></td>
+            <td th:text="${blog.name}" ></td>
+
+        </tr>
+        <tr>
+            <td><img th:src="${blog.getImage()}" onclick="window.location.href='/user/'"> </td>
+            <td th:text="${blog.title}"></td>
+        </tr>
+    </table>
+
+
+
+</article>
+<aside style="height: 400px;background-image: url('https://png.pngtree.com/back_origin_pic/04/48/50/84cd2a9fbc6cbd5522b2f048a56703a8.jpg');width: 830px;float:left" >
+
+<table border="1" th:if="${userList!=null}" style="margin: auto">
+    <tr>
+        <th>STT</th>
+        <th>ID</th>
+        <th>fistName</th>
+        <th>lastName</th>
+        <th>age</th>
+        <th>phoneNumber</th>
+        <th>email</th>
+    </tr>
+
+    <tr th:each="user,status: ${userList}">
+        <td th:text="${status.count}"></td>
+        <td th:text="${user.id}" ></td>
+        <td th:text="${user.firstName}" ></td>
+        <td th:text="${user.lastName}" ></td>
+        <td th:text="${user.age}" ></td>
+        <td th:text="${user.phoneNumber}" ></td>
+        <td th:text="${user.email}" ></td>
+        <!--            <td th:switch="${user.lastname}">-->
+        <!--                <span th:case="1" th:text="Nam"></span>-->
+        <!--                <span th:case="0" th:text="Nữ"></span>-->
+        <!--                <span th:case="*" th:text="LGBT"></span>-->
+        <!--            </td>-->
+        <!--            <td><a th:href="@{/student/detail(id=${student.id})}">Detail1/RequestParam</a></td>-->
+        <!--            <td><a th:href="@{/student/detail/{id}(id=${student.id})}">Detail2/PathVariable</a></td>-->
+        <!--            <td><a th:href="@{/student/detail/__${student.id}__}">Detail2/PathVariable</a></td>-->
+    </tr>
+    <tr>
+        <td colspan="7" th:if="${userList.isEmpty()}">
+            Danh sách trống
+        </td>
+    </tr>
+    <a th:if="${userList.hasPrevious()}" th:href="@{/user(page=${userList.getNumber()},searchName=${searchName})}">Previous</a>
+    <span th:text="${userList.getNumber()+1}"></span>/
+    <span th:text="${userList.totalPages}"></span>
+    <a th:if="${userList.hasNext()}" th:href="@{/student(page=${userList.getNumber+1},searchName=${searchName})}">Next</a>
+</table>
+
+
+
+
+
+
+
+
+</aside>
+</section>
+<footer style="background: black;height: 59px">
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image: url('http://thuthuatphanmem.vn/uploads/2018/08/21/hinh-nen-powerpoint-don-gian-dep-31_045407361.jpg');">
+<body>
+
+<form method="post" th:object="${blog}" th:action="@{/user/createBlog}">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td>image</td>
+            <td><input type="text" th:field="*{image}"></td>
+        </tr>
+        <tr>
+            <td>title</td>
+            <td><input type="text" th:field="*{title}"></td>
+        </tr>
+        <tr >
+            <td>
+                ghiChu
+            </td>
+            <td >
+                <select >
+                    <option th:each="content,status: ${contentList}" th:text="${content.ghiChu}" th:value="${content.id}" th:field="*{content}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</body>
+</html>
