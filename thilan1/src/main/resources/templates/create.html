@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/product/createProduct}" method="post">
+    <h1>Các thuộc tính có dấu * là bắt buộc</h1>
+    <table th:object="${product}">
+        <tr>
+            <td>Tên Sản Phẩm*</td>
+        </tr>
+        <tr>
+            <td><input type="text" th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td>Giá Bắt Đầu*</td>
+
+        </tr>
+        <tr>
+            <td>
+                <input type="text" th:field="*{price}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Loại Sản Pham
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select  th:field="*{productType}">
+                    <option th:each="productType,status: ${productTypeList}" th:text="${productType.name}" th:value="${productType.idProductType}" />
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="hidden" th:field="*{status}"></td>
+        </tr>
+        <tr>
+            <td><button type="submit">thêm sản phẩm</button></td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>
