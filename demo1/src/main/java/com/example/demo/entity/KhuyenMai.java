@@ -120,3 +120,15 @@ public class KhuyenMai implements Validator {
 
     }
 }
+//@NotNull – kiểm tra giá trị null
+//@AssertTrue – kiểm tra giá trị thuộc tính là true
+//@Size – kiểm tra độ dài min and max
+//@Min – kiểm tra giá trị nhỏ nhất
+//@Max – Kiểm tra giá trị lớn nhất
+//@Email – kiểm tra email có hợp lệ
+//@NotEmpty – kiểm tra không được trống và empty
+//@NotBlank – kiểm tra giá trị không được null hoặc khoảng trắng
+//@Positive and @PositiveOrZero – kiểm tra chỉ được phép là số nguyên dương từ 0 trở đi
+//@Negative and @NegativeOrZero – kiểm tra số âm
+//@Past and @PastOrPresent – kiểm tra ngày từ quá khứ đến hiện tại.
+//@Future and @FutureOrPresent – kiểm tra ngày từ hiện tại đến tương lai

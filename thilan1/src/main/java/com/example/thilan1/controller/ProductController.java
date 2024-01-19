@@ -94,7 +94,6 @@ public class ProductController {
                                 @RequestParam("price") float price,
                                 @RequestParam("productType") int productType)
     {
-
         Product product = new Product(id,name,price,"chờ duyệt",productTypeService.findById(id));
         productService.saveProduct(product);
         return "redirect:/product";

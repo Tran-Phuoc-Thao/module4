@@ -14,6 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/khuyenMai")
@@ -32,7 +33,7 @@ public class KhuyenMaiController {
                            @RequestParam(defaultValue = "")String ngayBatDau,
                            @RequestParam(defaultValue = "")String ngayKetThuc,
                            ModelMap model) {
-        Pageable pageable = PageRequest.of(page,5, Sort.by("title"));
+        Pageable pageable = PageRequest.of(page,3, Sort.by("title"));
         Page<KhuyenMai> khuyenMaiList = service.findAll(pageable,"%"+mucGiamGia+"%","%"+ngayBatDau+"%","%"+ngayKetThuc+"%");
         model.addAttribute("khuyenMaiList", khuyenMaiList);
         model.addAttribute("mucGiamGia", mucGiamGia);
@@ -56,9 +57,21 @@ public class KhuyenMaiController {
         return "redirect:/khuyenMai";
     }
 
-    @RequestMapping("/delete")
-    public String deleteProduct(@RequestParam("id")int id){
+    @PostMapping("/delete")
+    public String deleteProduct(@ModelAttribute("id")int id){
         service.delete(id);
+        return "redirect:/khuyenMai";
+    }
+
+    @PostMapping("/deleteCheckBox")
+    public String delete(@RequestParam("idChecked") List<String> idDeletes){
+
+        if(idDeletes != null){
+            for(String idDeleteStr : idDeletes){
+                int idDelete = Integer.parseInt(idDeleteStr);
+                service.delete(idDelete);
+            }
+        }
         return "redirect:/khuyenMai";
     }
 
@@ -68,7 +81,7 @@ public class KhuyenMaiController {
                          @RequestParam(defaultValue = "")String ngayBatDau,
                          @RequestParam(defaultValue = "")String ngayKetThuc,
                          ModelMap model){
-        Pageable pageable = PageRequest.of(page,5, Sort.by("title"));
+        Pageable pageable = PageRequest.of(page,3, Sort.by("title"));
         Page<KhuyenMai> khuyenMaiList = service.findAll(pageable,"%"+mucGiamGia+"%","%"+ngayBatDau+"%","%"+ngayKetThuc+"%");
         model.addAttribute("khuyenMaiList", khuyenMaiList);
         model.addAttribute("mucGiamGia", mucGiamGia);

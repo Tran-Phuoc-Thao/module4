@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .pagination a {
+        margin: 0 5px;
+        text-decoration: none;
+    }
+
+    .pagination button {
+        padding: 5px 10px;
+        border: none;
+        background-color: #f2f2f2;
+        cursor: pointer;
+    }
+
+    .pagination a.active button {
+        background-color: #007bff;
+        color: white;
+    }
+</style>
+<body style="background-color: beige">
+<header style="background: paleturquoise;height: 100px">
+    <img  style="height:100px;background:paleturquoise" src="https://tse2.mm.bing.net/th?id=OIP.X-BqeuY-fo0fSF8uuqT85AHaEP&pid=Api&P=0&h=180">
+</header>
+<div class="container">
+<!--<nav style="background: darkgray;height: 42px;width: auto">-->
+
+<!--    <button style="margin-top:1px ;width: 100px;;height: 39px;solid:50px;color: cornflowerblue;background:greenyellow " type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add">-->
+<!--        Add-->
+<!--    </button>-->
+
+</nav>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+
+            <!-- Button trigger modal -->
+
+            <a class="navbar-brand" data-bs-toggle="modal" data-bs-target="#add" >Add</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/Blog/createBlog}">Add</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search" th:action="@{/Blog/search}" method="get">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchName">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <form th:action="@{/Blog/createBlog}"  method="post" >
+        <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" >Add New Blogs</h5>
+                    </div>
+
+                    <div>
+                            <table th:object="${blog}">
+                                <tr>
+                                    <td>Title</td>
+                                    <td><input type="text" th:field="*{title}"></td>
+                                    <td><small style="color: red" th:if="${#fields.hasErrors('title')}" th:errors ="*{title}"></small></td>
+                                </tr>
+                                <tr>
+                                    <td>Author</td>
+                                    <td><input type="text" th:field="*{author}"></td>
+                                    <td><small style="color: red" th:if="${#fields.hasErrors('author')}" th:errors ="*{author}"></small></td>
+                                </tr>
+                                <tr >
+                                    <td>
+                                        Category
+                                    </td>
+                                    <td >
+                                        <select  th:field="*{category}">
+                                            <option th:each="category,status: ${categoryList}" th:text="${category.content}" th:value="${category.id}" />
+                                        </select>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+    <table th:if="${blogList!=null}" style="margin-top:20px;" class="table table-striped table-bordered table-hover table-borderless display" id="myTable">
+        <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Author</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Detail</th>
+
+        </tr>
+
+        </thead>
+        <tbody id="result">
+        <tr th:each="blog:${blogList}" th:object="${blog}" >
+
+            <td th:text="*{id}"></td>
+            <td th:text="*{author}"></td>
+            <td th:text="*{title}"></td>
+            <td th:text="*{category.content}"></td>
+            <td><a th:href="@{Blog/detail/(id=*{id})}" th:text="Detail"></a></td>
+<!--            <td>-->
+
+<!--                &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop&id=${blog.id}">-->
+<!--                    Detail-->
+<!--                </button>-->
+
+<!--                &lt;!&ndash; Modal &ndash;&gt;-->
+<!--                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">-->
+<!--                    <div class="modal-dialog">-->
+<!--                        <div class="modal-content">-->
+<!--                            <div class="modal-header">-->
+<!--                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>-->
+<!--                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--                            </div>-->
+<!--                            <div class="modal-body">-->
+<!--                                ...-->
+<!--                            </div>-->
+<!--                            <div class="modal-footer">-->
+<!--                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+<!--                                <button type="button" class="btn btn-primary">Understood</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+
+
+<!--            </td>-->
+
+        </tr>
+        </tbody>
+
+    </table>
+    <span th:text="${blogList.getNumber()+1}"></span>/
+    <span th:text="${blogList.totalPages}"></span>
+
+    <div class="pagination">
+        <a th:if="${blogList.hasPrevious()}" th:href="@{/Blog(page=${blogList.getNumber()-1},searchName=${searchName})}">Previous</a>
+            <a th:text="${blogList.getNumber}" th:if="${blogList.hasPrevious()}" th:href="@{/Blog(page=${blogList.getNumber()-1},searchName=${searchName})}"></a>
+            <a th:text="${blogList.getNumber + 1}" th:href="@{/Blog(page=${blogList.getNumber()},searchName=${searchName})}"></a>
+            <a th:text="${blogList.getNumber + 2}" th:if="${blogList.hasNext()}" th:href="@{/Blog(page=${blogList.getNumber+1},searchName=${searchName})}"></a>
+        <a th:if="${blogList.hasNext()}" th:href="@{/Blog(page=${blogList.getNumber+1},searchName=${searchName})}">Next</a>
+    </div>
+
+
+
+    Search: <input type="text" id="author" oninput="searchByName()"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        function searchByName() {
+            let author = $("#author").val();
+            $.ajax({
+                url: "http://localhost:8080/Blog/api/search1",
+                data: {
+                    searchName: author,
+                    page:0,
+
+                },
+                type: "get",
+                dataType: "json",
+                success: function(data) {
+                    let result = "";
+                    for (let i = 0; i < res.length; i++) {
+                        result += "<tr>" +
+                            "<td>" + res[i].id + "</td>" +
+                            "<td>" + res[i].author + "</td>" +
+                            "<td>" + res[i].title + "</td>" +
+                            "<td>" + res[i].category.content + "</td>" +
+                            "<td><a href='/Blog/detail?id=" + res[i].id + "'>Detail</a></td>" +
+                            "</tr>";
+                    }
+
+                    $("#result").html(result);
+                }
+            });
+        }
+
+
+    </script>
+
+
+
+
+</div>
+</body>
+</html>

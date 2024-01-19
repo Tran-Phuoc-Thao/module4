@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table th:if="${blogDetail!=null}">
+    <thead class="table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>AuThor</th>
+        <th>Content</th>
+    </tr>
+    </thead>
+    <tr>
+        <td th:text="${blogDetail.id}"></td>
+        <td th:text="${blogDetail.title}"></td>
+        <td th:text="${blogDetail.author}"></td>
+        <td th:text="${blogDetail.category.content}"></td>
+    </tr>
+    <tr>
+        <td colspan="4" th:text="${blogDetail.category.note}">
+        </td>
+    </tr>
+</table>
+
+
+</body>
+</html>
