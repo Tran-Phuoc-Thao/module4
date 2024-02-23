@@ -1,9 +1,20 @@
-package com.example.demo.controller;
+package com.example.khuyenmai.controller;
 
-import com.example.demo.entity.KhuyenMai;
-import com.example.demo.service.KhuyenMaiService;
+import com.example.khuyenmai.entity.KhuyenMai;
+import com.example.khuyenmai.service.KhuyenMaiService;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
+
 import java.util.List;
 
 @Controller

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/khuyenMai/create}" method="post">
+
+    <table th:object="${khuyenMai}">
+        <tr>
+            <td>Tiêu Đề*</td>
+            <td><input type="text" th:field="*{title}"></td>
+            <td><small style="color: red" th:if="${#fields.hasErrors('title')}" th:errors ="*{title}"></small></td>
+        </tr>
+        <tr>
+            <td>Thời gian bắt đầu*</td>
+            <td><input type="date" th:field="*{ngayBatDau}"></td>
+            <td><small style="color: red" th:if="${#fields.hasErrors('ngayBatDau')}" th:errors ="*{ngayBatDau}"></small></td>
+        </tr>
+        <tr>
+            <td>Thời gian kết thúc*</td>
+            <td><input type="date" th:field="*{ngayKetThuc}"></td>
+            <td><small style="color: red" th:if="${#fields.hasErrors('ngayKetThuc')}" th:errors ="*{ngayKetThuc}"></small></td>
+        </tr>
+        <tr>
+            <td>Mức giảm giá*</td>
+            <td><input type="text" th:field="*{mucGiamGia}"></td>
+            <td><small style="color: red" th:if="${#fields.hasErrors('mucGiamGia')}" th:errors ="*{mucGiamGia}"></small></td>
+        </tr>
+        <tr>
+            <td>Chi tiết</td>
+            <td><input type="text" th:field="*{chiTiet}"></td>
+            <td><small style="color: red" th:if="${#fields.hasErrors('chiTiet')}" th:errors ="*{chiTiet}"></small></td>
+        </tr>
+
+        <tr>
+            <td><button type="submit" >thêm sản phẩm</button></td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>

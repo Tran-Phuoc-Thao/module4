@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/baiHat/create}" method="post">
+
+    <table th:object="${baiHat}">
+        <tr>
+            <td>ten*</td>
+            <td><input type="text" th:field="*{ten}"></td>
+            <td><small style="color: red" th:if="${#fields.hasErrors('ten')}" th:errors ="*{ten}"></small></td>
+        </tr>
+        <tr>
+            <td>nghesithehien*</td>
+            <td><input type="text" th:field="*{ngheSiTheHien}"></td>
+            <td><small style="color: red" th:if="${#fields.hasErrors('ngheSiTheHien')}" th:errors ="*{ngheSiTheHien}"></small></td>
+        </tr>
+        <tr>
+            <td>theloai*</td>
+            <td><input type="text" th:field="*{theLoai}"></td>
+            <td><small style="color: red" th:if="${#fields.hasErrors('theLoai')}" th:errors ="*{theLoai}"></small></td>
+        </tr>
+
+        <tr>
+            <td><button type="submit" >thêm sản phẩm</button></td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>

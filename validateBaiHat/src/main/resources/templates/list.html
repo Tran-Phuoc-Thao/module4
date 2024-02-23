@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+          crossorigin="anonymous">
+
+
+
+
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .pagination a {
+        margin: 0 5px;
+        text-decoration: none;
+    }
+
+    .pagination button {
+        padding: 5px 10px;
+        border: none;
+        background-color: #f2f2f2;
+        cursor: pointer;
+    }
+
+    .pagination a.active button {
+        background-color: #007bff;
+        color: white;
+    }
+</style>
+<body style="background-color: beige">
+<div class="container">
+
+
+    <a th:href="@{/baiHat/create}" >Thêm mới sản phẩm</a>
+<!--    <form th:action='@{/khuyenMai/deleteCheckBox}'-->
+<!--          method="POST">-->
+    <table th:if="${ListBH!=null}" style="margin-top:20px;" class="table table-striped table-bordered table-hover table-borderless display " role="document" id="myTable">
+        <thead class="table-dark">
+        <tr>
+            <th>STT</th>
+            <th>Ten</th>
+            <th>nghe si</th>
+            <th>the loai</th>
+            <th>Update</th>
+
+
+        </tr>
+
+        </thead>
+<!--        <tbody id="result">-->
+        <tr th:each="baiHat,status: ${ListBH}" th:object="${baiHat}" >
+            <td th:text="${status.count}"></td>
+            <td th:text="*{ten}"></td>
+            <td th:text="*{ngheSiTheHien}"></td>
+            <td th:text="*{theLoai}"></td>
+<!--            <td><a th:text="update">update</a></td>-->
+<!--            <td><a th:href="@{/khuyenMai/delete/(id=*{id})}"-->
+<!--                   class="btn btn-danger"-->
+<!--                   th:attr="data-confirm='bạn có muốn xóa chương trình khuyến mãi' + *{title}"-->
+<!--                   onclick="return confirmDelete(this.getAttribute('data-confirm'));">Delete</a>-->
+<!--            </td>-->
+
+<!--            <td>-->
+
+<!--                <button type="button" class="btn btn-danger" data-bs-toggle="modal"-->
+<!--                        data-bs-target="#exampleModal"-->
+<!--                        th:attr="onclick=|sendInfoToModal('${khuyenMai.id}','${khuyenMai.title}')|"-->
+<!--                >-->
+<!--                    Xóa-->
+<!--                </button>-->
+<!--            </td>-->
+<!--            <td>-->
+<!--                <input type="checkbox" th:name="idChecked" th:value="${khuyenMai.getId()}"/>-->
+<!--            </td>-->
+
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--        <tr>-->
+<!--            <td></td>-->
+<!--            <td></td>-->
+<!--            <td></td>-->
+<!--            <td></td>-->
+<!--            <td></td>-->
+<!--            <td></td>-->
+<!--            <td></td>-->
+<!--            <td>-->
+<!--                <button type="submit" name='delete' value="delete"-->
+<!--                        class='btn btn-secondary btn-sm'-->
+<!--                        data-toggle="tooltip" data-placement="right">-->
+<!--                Submit-->
+<!--                </button>-->
+<!--            </td>-->
+<!--        </tr>-->
+
+    </table>
+<!--    </form>-->
+
+
+
+<!--    &lt;!&ndash; Modal &ndash;&gt;-->
+<!--    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--        <div class="modal-dialog">-->
+<!--            <div class="modal-content">-->
+<!--                <form th:action="@{/khuyenMai/delete}" method="post">-->
+<!--                    <div class="modal-header">-->
+<!--                        <h1 class="modal-title fs-5" id="exampleModalLabel">Xóa</h1>-->
+<!--                        <button type="button" class="btn-close" data-bs-dismiss="modal"-->
+<!--                                aria-label="Close"></button>-->
+<!--                    </div>-->
+<!--                    <div class="modal-body">-->
+<!--                        <input type="hidden" id="id" name="id">-->
+<!--                        Bạn có chắc chắn muốn xóa sản phẩm có tên là-->
+<!--                        <span class="text-danger" id="name_delete"></span>-->
+<!--                    </div>-->
+<!--                    <div class="modal-footer">-->
+<!--                        <button type="button" class="btn btn-secondary"-->
+<!--                                data-bs-dismiss="modal">Hủy-->
+<!--                        </button>-->
+<!--                        <button type="submit" class="btn btn-primary">Xóa</button>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+
+
+
+
+
+
+
+
+</div>
+</body>
+<script>
+    // function sendInfoToModal(id, name) {
+    //     document.getElementById("name_delete").innerText = name;
+    //     document.getElementById("id").value = id;
+    // }
+    // function confirmDelete(message) {
+    //     return confirm(message);
+    // }
+</script>
+</html>

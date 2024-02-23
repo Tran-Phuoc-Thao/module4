@@ -1,8 +1,21 @@
-package com.example.demo.entity;
+package com.example.khuyenmai.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+
 
 
 @Entity
 public class KhuyenMai implements Validator {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -108,6 +121,12 @@ public class KhuyenMai implements Validator {
 
 
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+
 }
 //@NotNull – kiểm tra giá trị null
 //@AssertTrue – kiểm tra giá trị thuộc tính là true

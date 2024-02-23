@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="617bcd1c-0af9-4629-90eb-8924bb84468c" name="Changes" comment="">
+    <list default="true" id="72b5e4b4-a222-41e3-a439-a95df95384ee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../demo/.idea/demo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../validateBH/src/main/java/com/example/validatebh/controller/baiHatController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../validateBH/src/main/java/com/example/validatebh/entity/BaiHat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../demo1/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../demo1/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../demo2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../demo2/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sach/.gitignore" beforeDir="false" />
@@ -27,83 +27,39 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
-      <ProjectState />
-    </projectState>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-        <option value="HTML File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2S9T0deSB1GkJe3PxazRd26w3fH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2cfspdjA9U8npEWVeVVsajr8PVm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/codegym/module4/module4/demo",
-    "spring.configuration.checksum": "9de0862494cc3aa211be7c76dc6b547b",
+    "last_opened_file_path": "D:/codegym/module4/module4/test",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="demo.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="617bcd1c-0af9-4629-90eb-8924bb84468c" name="Changes" comment="" />
-      <created>1688557576305</created>
+      <changelist id="72b5e4b4-a222-41e3-a439-a95df95384ee" name="Changes" comment="" />
+      <created>1708514151259</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1688557576305</updated>
-      <workItem from="1688557577701" duration="1531000" />
-      <workItem from="1688560040570" duration="14000" />
-      <workItem from="1688734837109" duration="2000" />
-      <workItem from="1708514103211" duration="18000" />
+      <updated>1708514151259</updated>
+      <workItem from="1708514152287" duration="19000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
